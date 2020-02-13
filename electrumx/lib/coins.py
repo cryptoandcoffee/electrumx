@@ -1189,57 +1189,22 @@ class Motion(Coin):
         import x16r_hash
         return x16r_hash.getPoWHash(header)
 
-
 # Source: https://github.com/dashpay/dash
-class GlobalToken(Coin):
+class GlobalToken(AuxPowMixin,Coin):
     NAME = "GlobalToken"
     SHORTNAME = "GLT"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("02fe52cc")
     XPRV_VERBYTES = bytes.fromhex("02fe52f8")
-    GENESIS_HASH = ('0000000097fcef2abcd5b827feffb262'
-                    '5fa50ef1794d8efc75ddbfaa3daeb499')
+    GENESIS_HASH = ('0000000097fcef2abcd5b827feffb2625fa50ef1794d8efc75ddbfaa3daeb499')
     P2PKH_VERBYTE = bytes.fromhex("4c")
     P2SH_VERBYTES = [bytes.fromhex("10")]
     WIF_BYTE = bytes.fromhex("cc")
     TX_COUNT_HEIGHT = 569399
     TX_COUNT = 2157510
     TX_PER_BLOCK = 4
-    RPC_PORT = 9998
-    PEERS = [
-        '121.45.134.116 s t',
-        '134.255.254.187 s t',
-    ]
-    SESSIONCLS = DashElectrumX
-    DAEMON = daemon.DashDaemon
-    DESERIALIZER = lib_tx_dash.DeserializerDash
-
-    @classmethod
-    def header_hash(cls, header):
-        '''Given a header return the hash.'''
-        import x11_hash
-        return x11_hash.getPoWHash(header)
-
-
-class DashTestnet(Dash):
-    SHORTNAME = "tDASH"
-    NET = "testnet"
-    XPUB_VERBYTES = bytes.fromhex("3a805837")
-    XPRV_VERBYTES = bytes.fromhex("3a8061a0")
-    GENESIS_HASH = ('00000bafbc94add76cb75e2ec9289483'
-                    '7288a481e5c005f6563d91623bf8bc2c')
-    P2PKH_VERBYTE = bytes.fromhex("8c")
-    P2SH_VERBYTES = [bytes.fromhex("13")]
-    WIF_BYTE = bytes.fromhex("ef")
-    TX_COUNT_HEIGHT = 101619
-    TX_COUNT = 132681
-    TX_PER_BLOCK = 1
-    RPC_PORT = 19998
-    PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
-    PEERS = [
-        'electrum.dash.siampm.com s t',
-        'dasht.random.re s54002 t54001',
-    ]
+    RPC_PORT = 9319
+    PEERS = []
 
 
 class Argentum(AuxPowMixin, Coin):

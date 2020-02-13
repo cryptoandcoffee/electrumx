@@ -1190,7 +1190,7 @@ class Motion(Coin):
         return x16r_hash.getPoWHash(header)
 
 # Source: https://github.com/dashpay/dash
-class GlobalToken(AuxPowMixin,Coin):
+class GlobalToken(Coin):
     NAME = "GlobalToken"
     SHORTNAME = "GLT"
     NET = "mainnet"

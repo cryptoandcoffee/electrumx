@@ -1191,14 +1191,14 @@ class Motion(Coin):
 
 
 # Source: https://github.com/dashpay/dash
-class Dash(Coin):
-    NAME = "Dash"
-    SHORTNAME = "DASH"
+class GlobalToken(Coin):
+    NAME = "GlobalToken"
+    SHORTNAME = "GLT"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("02fe52cc")
     XPRV_VERBYTES = bytes.fromhex("02fe52f8")
-    GENESIS_HASH = ('00000ffd590b1485b3caadc19b22e637'
-                    '9c733355108f107a430458cdf3407ab6')
+    GENESIS_HASH = ('0000000097fcef2abcd5b827feffb262'
+                    '5fa50ef1794d8efc75ddbfaa3daeb499')
     P2PKH_VERBYTE = bytes.fromhex("4c")
     P2SH_VERBYTES = [bytes.fromhex("10")]
     WIF_BYTE = bytes.fromhex("cc")
@@ -1207,12 +1207,8 @@ class Dash(Coin):
     TX_PER_BLOCK = 4
     RPC_PORT = 9998
     PEERS = [
-        'electrum.dash.org s t',
-        'electrum.masternode.io s t',
-        'electrum-drk.club s t',
-        'dashcrypto.space s t',
-        'electrum.dash.siampm.com s t',
-        'wl4sfwq2hwxnodof.onion s t',
+        '121.45.134.116 s t',
+        '134.255.254.187 s t',
     ]
     SESSIONCLS = DashElectrumX
     DAEMON = daemon.DashDaemon
